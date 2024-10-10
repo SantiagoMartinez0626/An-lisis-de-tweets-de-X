@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: analisis_tweets_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - ENV=production
+    command: python app.py
